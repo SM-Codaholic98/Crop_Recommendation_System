@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Crop Recommendation System</title>
+        <link rel="stylesheet" href="test.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Crop Recommendation System</h1>
+            <form action="/predict" method="post">
+                <label for="temperature">Temperature:</label>
+                <input type="number" id="temperature" name="temperature" step="0.0001" placeholder="Enter the Temperature (in degree Celcius)" required><br>
+
+                <label for="humidity">Humidity:</label>
+                <input type="number" id="humidity" name="humidity" step="0.001" placeholder="Enter the Humidity (in %)" required><br>
+
+                <label for="ph">pH:</label>
+                <input type="number" id="ph" name="ph" step="0.001" placeholder="Enter the pH value" required><br>
+
+                <label for="rainfall">Rainfall:</label>
+                <input type="number" id="rainfall" name="rainfall" step="0.001" placeholder="Enter the Rainfall (in mm)" required><br>
+
+                <label for="n">Nitrogen:</label>
+                <input type="number" id="n" name="n" step="0.001" placeholder="Enter the Nitrogen concentration (in mg/kg) of soil" required><br>
+
+                <label for="p">Phosphorus:</label>
+                <input tupe="number" id="p" name="p" step="0.001" placeholder="Enter the Phosphosrus concentration (in mg/kg) of Soil" required><br>
+
+                <label for="k">Potassium:</label>
+                <input type="number" id="k" name="k" step="0.001" placeholder="Enter the Potassium concentration (in mg/kg) of soil" required><br>
+
+                <input type="submit" value="Predict Crop">
+            </form>
+            {% if prediction_text %}
+            <div class="output">
+                <h2>{{ prediction_text }}</h2>
+            </div>
+            {% endif %}
+        </div>
+    </body>
+</html>
